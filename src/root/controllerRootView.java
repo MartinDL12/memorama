@@ -8,6 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -49,6 +50,8 @@ public class controllerRootView implements Observer, Initializable {
     private Text scoreTxt;
     @FXML
     private TextArea TopScore;
+    @FXML
+    private TextField userName;
 
     @FXML
     private Button buttonIniciar;
@@ -83,6 +86,7 @@ public class controllerRootView implements Observer, Initializable {
         timer.setDaemon(true);
         nuevaPartida();
         timer.start();
+        userName.setEditable(false);
     }
 
     @FXML
@@ -138,6 +142,7 @@ public class controllerRootView implements Observer, Initializable {
         esp1.setImage(img);
         revolver();
         firstClicked = true;
+        TopScore.setEditable(false);
         try {
             topScore();
         } catch (SQLException throwables) {
@@ -164,7 +169,7 @@ public class controllerRootView implements Observer, Initializable {
                     })
             );
             timeline.play();
-            insertarScore();
+
 
         }
 
@@ -212,6 +217,11 @@ public class controllerRootView implements Observer, Initializable {
         else if(fin){
             movible=false;
             infoAlert("Fin del juego","Time Over","your score is: "+score);
+            try {
+                insertarScore();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
         }
         else{
             movible=false;
@@ -285,7 +295,7 @@ public class controllerRootView implements Observer, Initializable {
 
     }
      public  void insertarScore() throws SQLException {
-         String query1 = "Insert into \"scores\" (\"score\", \"userName\") VALUES ('"+ score+"', 'Daniel')";
+         String query1 = "Insert into \"scores\" (\"score\", \"userName\") VALUES ('"+ score+"', '"+ userName.getText()+"')";
          Statement st = conn1.createStatement();
          st.execute(query1);
      }
