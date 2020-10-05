@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="561.0" prefWidth="890.0" style="-fx-background-color: GRAY;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="root.controllerRootView">
+   <children>
+      <Button fx:id="buttonIniciar" layoutX="180.0" layoutY="502.0" mnemonicParsing="false" onAction="#inicio" prefHeight="27.0" prefWidth="61.0" text="Iniciar" />
+      <Button fx:id="buttonSalir" layoutX="61.0" layoutY="502.0" mnemonicParsing="false" onMouseClicked="#buttonSalirOnMouseClicked" prefHeight="27.0" prefWidth="82.0" text="Salir" />
+      <ImageView fx:id="esp1" fitHeight="218.0" fitWidth="153.0" layoutX="124.0" layoutY="33.0" onMouseClicked="#comprobar" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="esp2" fitHeight="218.0" fitWidth="153.0" layoutX="305.0" layoutY="33.0" onMouseClicked="#comprobar" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="esp3" fitHeight="218.0" fitWidth="153.0" layoutX="479.0" layoutY="33.0" onMouseClicked="#comprobar" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="esp4" fitHeight="218.0" fitWidth="153.0" layoutX="124.0" layoutY="258.0" onMouseClicked="#comprobar" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="esp5" fitHeight="218.0" fitWidth="153.0" layoutX="305.0" layoutY="258.0" onMouseClicked="#comprobar" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="esp6" fitHeight="218.0" fitWidth="153.0" layoutX="479.0" layoutY="258.0" onMouseClicked="#comprobar" pickOnBounds="true" preserveRatio="true" />
+      <Text layoutX="323.0" layoutY="511.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time:" />
+      <Text fx:id="txtSeg" layoutX="359.0" layoutY="511.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10" />
+      <Text layoutX="36.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Score:" />
+      <Text fx:id="scoreTxt" layoutX="77.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
+      <Text layoutX="612.0" layoutY="507.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Intento:" />
+      <Text fx:id="intentoTxt" layoutX="668.0" layoutY="507.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" />
+      <TextArea id="TopScorelabelb" fx:id="TopScore" layoutX="674.0" layoutY="175.0" prefHeight="65.0" prefWidth="198.0">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </TextArea>
+      <Label layoutX="693.0" layoutY="115.0" text="Top Score" textFill="#fff400">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
